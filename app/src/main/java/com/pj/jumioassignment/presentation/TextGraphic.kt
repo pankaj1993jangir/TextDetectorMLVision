@@ -11,7 +11,7 @@ class TextGraphic internal constructor(
     overlay: GraphicOverlay,
     private val element: Text.Element?
 ) : GraphicOverlay.Graphic(overlay) {
-    private val rectPaint: Paint
+    private val rectPaint: Paint = Paint()
 
     override fun draw(canvas: Canvas) {
         Log.d(TAG, "on draw text graphic")
@@ -27,7 +27,6 @@ class TextGraphic internal constructor(
     }
 
     init {
-        rectPaint = Paint()
         rectPaint.color = TEXT_COLOR
         rectPaint.style = Paint.Style.STROKE
         rectPaint.strokeWidth = STROKE_WIDTH
